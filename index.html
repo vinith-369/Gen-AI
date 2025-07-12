@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <!-- Collapse Button -->
+            <button class="collapse-btn" onclick="toggleSidebar()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <!-- Collapsed Controls -->
+            <div class="collapsed-controls">
+                <button class="collapsed-new-chat" onclick="startNewChat()">
+                    +
+                </button>
+            </div>
+
+            <!-- Regular Sidebar Content -->
+            <div class="sidebar-content">
+                <button class="new-chat-btn" onclick="startNewChat()">
+                    <span>+</span>
+                    New chat
+                </button>
+
+                <div class="chat-history">
+                    <div class="chat-history-item">Previous conversation 1</div>
+                    <div class="chat-history-item">Previous conversation 2</div>
+                    <div class="chat-history-item">Previous conversation 3</div>
+                </div>
+
+                <div class="user-profile">
+                    <div class="user-avatar">U</div>
+                    <div>
+                        <div style="font-weight: 500;">User</div>
+                        <div style="font-size: 12px; color: #8b949e;">Free plan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Floating Logo -->
+            <div class="floating-logo">
+                <span>Airys <span class="ai-accent">AI</span></span>
+            </div>
+
+            <!-- Copy Notification -->
+            <div class="copy-notification" id="copyNotification">
+                Copied to clipboard!
+            </div>
+
+            <div class="chat-container">
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Welcome Screen -->
+                    <div class="welcome-screen" id="welcomeScreen">
+                        <div class="welcome-greeting">
+                            Hello! How can I help you today?
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-action" onclick="sendQuickMessage('Help me with math')">Math Help</button>
+                            <button class="quick-action" onclick="sendQuickMessage('Tell me a joke')">Entertainment</button>
+                            <button class="quick-action" onclick="sendQuickMessage('Explain quantum physics')">Learn</button>
+                            <button class="quick-action" onclick="sendQuickMessage('Plan my day')">Life stuff</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea
+                            id="messageInput"
+                            class="input-box"
+                            placeholder="Ask Airys anything..."
+                            rows="1"
+                            onkeydown="handleKeyPress(event)"
+                            oninput="autoResize(this)"
+                        ></textarea>
+                        <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12L22 2L18 12L22 22L2 12Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
