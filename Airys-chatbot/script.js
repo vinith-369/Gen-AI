@@ -31,6 +31,9 @@ document.addEventListener('click', function(event) {
     }
 });
 
+// Profile menu action handlers
+// Note: These are placeholder implementations. In production, these would
+// navigate to actual pages or open proper modal dialogs.
 function openSettings() {
     alert('Settings page would open here');
     toggleProfileMenu();
