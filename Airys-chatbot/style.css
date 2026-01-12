@@ -223,6 +223,36 @@ gap: 12px;
 padding: 12px;
 border-radius: 8px;
 background-color: #21262d;
+cursor: pointer;
+transition: background-color 0.2s;
+position: relative;
+}
+
+.user-profile:hover {
+background-color: #30363d;
+}
+
+.user-info {
+flex: 1;
+}
+
+.user-name {
+font-weight: 500;
+color: #c9d1d9;
+}
+
+.user-plan {
+font-size: 12px;
+color: #8b949e;
+}
+
+.profile-arrow {
+transition: transform 0.3s ease;
+color: #8b949e;
+}
+
+.user-profile:hover .profile-arrow {
+color: #c9d1d9;
 }
 
 .user-avatar {
@@ -235,6 +265,95 @@ align-items: center;
 justify-content: center;
 color: white;
 font-weight: bold;
+flex-shrink: 0;
+}
+
+/* Profile Dropdown Menu */
+.profile-menu {
+position: fixed;
+bottom: 80px;
+left: 20px;
+width: 240px;
+background-color: #21262d;
+border: 1px solid #30363d;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+opacity: 0;
+visibility: hidden;
+transform: translateY(10px);
+transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+z-index: 1000;
+overflow: hidden;
+}
+
+.profile-menu.show {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+
+.profile-menu-header {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 16px;
+background-color: #161b22;
+}
+
+.profile-menu-avatar {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: #00d4ff;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+font-size: 16px;
+flex-shrink: 0;
+}
+
+.profile-menu-name {
+font-weight: 600;
+color: #f0f6fc;
+font-size: 14px;
+}
+
+.profile-menu-email {
+font-size: 12px;
+color: #8b949e;
+margin-top: 2px;
+}
+
+.profile-menu-divider {
+height: 1px;
+background-color: #30363d;
+margin: 4px 0;
+}
+
+.profile-menu-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 12px 16px;
+color: #c9d1d9;
+font-size: 14px;
+cursor: pointer;
+transition: background-color 0.2s;
+}
+
+.profile-menu-item:hover {
+background-color: #30363d;
+}
+
+.profile-menu-item svg {
+color: #8b949e;
+flex-shrink: 0;
+}
+
+.profile-menu-item:hover svg {
+color: #00d4ff;
 }
 
 /* Main Content */
@@ -1080,5 +1199,11 @@ transform: none;
 .message.assistant .message-actions {
 left: auto;
 right: auto;
+    }
+
+.profile-menu {
+left: 10px;
+width: calc(100% - 20px);
+max-width: 320px;
     }
 }
