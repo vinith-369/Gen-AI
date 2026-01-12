@@ -13,6 +13,46 @@ function toggleSidebar() {
     sidebar.classList.toggle('collapsed');
 }
 
+// Profile menu functionality
+function toggleProfileMenu() {
+    const profileMenu = document.getElementById('profileMenu');
+    profileMenu.classList.toggle('show');
+}
+
+// Close profile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const profileMenu = document.getElementById('profileMenu');
+    const userProfile = document.querySelector('.user-profile');
+    
+    if (profileMenu && userProfile && 
+        !profileMenu.contains(event.target) && 
+        !userProfile.contains(event.target)) {
+        profileMenu.classList.remove('show');
+    }
+});
+
+function openSettings() {
+    alert('Settings page would open here');
+    toggleProfileMenu();
+}
+
+function viewProfile() {
+    alert('Profile page would open here');
+    toggleProfileMenu();
+}
+
+function upgradePlan() {
+    alert('Upgrade plan page would open here');
+    toggleProfileMenu();
+}
+
+function logout() {
+    if (confirm('Are you sure you want to log out?')) {
+        alert('Logging out...');
+        toggleProfileMenu();
+    }
+}
+
 // Copy functionality
 function copyMessage(messageElement) {
     const content = messageElement.querySelector('.message-content').textContent;
