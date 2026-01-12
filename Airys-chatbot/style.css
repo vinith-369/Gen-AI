@@ -1204,4 +1204,10 @@ transform: none;
 left: auto;
 right: auto;
     }
+
+.profile-menu {
+left: 10px;
+width: calc(100% - 20px);
+max-width: 320px;
+    }
 }
